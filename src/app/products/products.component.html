@@ -1,0 +1,10 @@
+
+<div class="card" style="width: 18rem;" *ngFor="let product of products let idx=index">
+  <div class="card-body mb-3">
+      <img class="img-thumbnail" *ngIf="product.img" [src]="product.img">
+    <h5 class="card-title">{{product.title}}</h5>
+    <p class="card-text">${{product.price}}</p>
+    <button class="btn btn-info pl-4 pr-4 mb-2" [routerLink]="['/products', 'edit', idx]">Update</button><br>
+    <button class="btn btn-danger pl-5 pr-5" (click)="deleteProduct(product)">Delete</button>
+  </div>
+</div>
